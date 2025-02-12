@@ -10,9 +10,16 @@ import SwiftUI
 struct ContentView: View {
     
     // MARK: Stored properties
- 
+    @State var number1: Int = 1
+    @State var number2: Int = 1
+
     
     // MARK: Computed properties
+    var sumSquareRoot: Double { return sqrt(Double((number1 + number2))) }
+      
+
+    
+    
     var body: some View {
         VStack {
             
