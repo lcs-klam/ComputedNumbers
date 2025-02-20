@@ -15,37 +15,48 @@ struct ContentView: View {
 
     
     // MARK: Computed properties
-    var sumSquareRoot: Double { return sqrt(Double((number1 + number2))) }
+    var sumSquareRoot: Double {
+        return sqrt(Double(number1 + number2))
+    }
       
 
     
     
     var body: some View {
-        VStack {
+        VStack  {
             
             Spacer()
             
-            HStack(alignment: .top) {
- 
-                Text("5")
-                    .font(.system(size: 96))
- 
-                Text("2")
-                    .font(.system(size: 44))
- 
-                Text("=")
-                    .font(.system(size: 96))
- 
-                Text("25")
-                    .font(.system(size: 96))
+            HStack {
+                Text("√(")
+                    .font(.system(size: 48))
+                
+                Text("\(number1) + \(number2)")
+                    .font(.system(size: 48))
+                
+                Text(") =")
+                    .font(.system(size: 48))
+                
+                Text("\(sumSquareRoot.formatted(.number.precision(.significantDigits(2))))")
+                    .font(.system(size: 48))
             }
-                        
+            
+            Stepper(value: $number1, in: 1...100, step: 1) {
+                Text("Number 1: \(number1)")
+            }
+            .padding()
+            
+            Stepper(value: $number2, in: 1...100, step: 1) {
+                Text("Number 2: \(number2)")
+            }
+            .padding()
+            
             Spacer()
         }
         .padding()
     }
 }
- 
+
 #Preview {
     ContentView()
 }
