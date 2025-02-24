@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     // MARK: Stored properties
-    @State var number1: Int = 1
-    @State var number2: Int = 1
+    @State var number1: String = ""
+    @State var number2: String = ""
 
     
     // MARK: Computed properties
