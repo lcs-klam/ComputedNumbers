@@ -41,13 +41,15 @@ struct ContentView: View {
                     .font(.system(size: 48))
             }
             
-            Stepper(value: $number1, in: 1...100, step: 1) {
-                Text("Number 1: \(number1)")
-            }
-            .padding()
-            
-            Stepper(value: $number2, in: 1...100, step: 1) {
-                Text("Number 2: \(number2)")
+            TextField("Enter number 1", text: $number1)
+                .textFieldStyle(.roundedBorder)
+                .keyboardType(.numberPad)
+                .padding()
+
+            TextField("Enter number 2", text: $number2)
+                .textFieldStyle(.roundedBorder)
+                .keyboardType(.numberPad)
+                .padding()
             }
             .padding()
             
